@@ -1,0 +1,284 @@
+{
+	"destination": "detailScreen",
+	"windowSizingX": "fixed",
+	"windowSizingY": "fixed",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"menuBar": "Menu Bar #1",
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onTimer",
+		"onPageChange"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "842pt",
+		"paperHeight": "595pt"
+	},
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	},
+	"pages": [
+		{
+			"objects": {
+				"Tab Control": {
+					"type": "tab",
+					"top": 22,
+					"left": 23,
+					"width": 1027,
+					"height": 856,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"dataSource": "_TabTitles",
+					"dataSourceTypeHint": "arrayText",
+					"action": "gotoPage",
+					"events": [
+						"onClick"
+					]
+				}
+			}
+		},
+		{
+			"objects": {
+				"information": {
+					"type": "input",
+					"top": 119,
+					"left": 51,
+					"width": 966,
+					"height": 720,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"dataSource": "Infos[0].Description",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"styledText": true,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				}
+			}
+		},
+		{
+			"objects": {
+				"List Box": {
+					"type": "listbox",
+					"left": 326,
+					"top": 292,
+					"width": 692,
+					"height": 304,
+					"events": [
+						"onSelectionChange"
+					],
+					"dataSource": "Form:C1466.mails",
+					"selectionMode": "single",
+					"listboxType": "collection",
+					"currentItemSource": "Form:C1466.mail",
+					"currentItemPositionSource": "",
+					"dragging": "custom",
+					"columns": [
+						{
+							"header": {
+								"name": "Header4",
+								"text": "Date"
+							},
+							"name": "Column4",
+							"dataSource": "Date:C102(This:C1470.sendAt)",
+							"footer": {
+								"name": "Footer4"
+							},
+							"width": 78,
+							"enterable": false,
+							"dataSourceTypeHint": "date"
+						},
+						{
+							"header": {
+								"text": "From",
+								"name": "Header1"
+							},
+							"name": "Column1",
+							"footer": {
+								"name": "Footer1"
+							},
+							"width": 194,
+							"dataSource": "This:C1470.from[0].email",
+							"enterable": false
+						},
+						{
+							"header": {
+								"name": "Header2",
+								"text": "Subject"
+							},
+							"name": "Column2",
+							"width": 592,
+							"footer": {
+								"name": "Footer2"
+							},
+							"dataSource": "This:C1470.subject",
+							"enterable": false
+						}
+					]
+				},
+				"Text": {
+					"type": "text",
+					"text": "Number of displayed emails:",
+					"top": 62,
+					"left": 330,
+					"width": 210,
+					"height": 15
+				},
+				"Input1": {
+					"type": "input",
+					"left": 520,
+					"top": 61,
+					"width": 28,
+					"height": 16,
+					"dataSourceTypeHint": "number",
+					"dataSource": "Form:C1466.numberMails",
+					"contextMenu": "none",
+					"max": 100,
+					"min": 1
+				},
+				"Hierarchical List": {
+					"type": "list",
+					"left": 29,
+					"top": 95,
+					"width": 287,
+					"height": 752,
+					"events": [
+						"onDrop",
+						"onSelectionChange"
+					],
+					"method": "ObjectMethods/Hierarchical List.4dm",
+					"dataSource": "Form:C1466.labels.listRef",
+					"dropping": "automatic"
+				},
+				"Spinner": {
+					"type": "spinner",
+					"left": 542,
+					"top": 363,
+					"width": 248,
+					"height": 182,
+					"visibility": "hidden",
+					"dataSource": "Form:C1466.spinner"
+				},
+				"Spinner1": {
+					"type": "spinner",
+					"left": 39,
+					"top": 356,
+					"width": 248,
+					"height": 182,
+					"visibility": "hidden",
+					"dataSource": "Form:C1466.spinner"
+				},
+				"Button1": {
+					"type": "button",
+					"text": "",
+					"top": 47,
+					"left": 29,
+					"width": 184,
+					"height": 44,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Button1.4dm",
+					"style": "regular",
+					"icon": "/RESOURCES/btn_google_signin_light_normal_web.png",
+					"customBackgroundPicture": "/RESOURCES/btn_google_signin_light_focus_web.png",
+					"imageHugsTitle": false,
+					"textPlacement": "center"
+				},
+				"information2": {
+					"type": "input",
+					"top": 857,
+					"left": 92,
+					"width": 950,
+					"height": 16,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"dataSource": "Infos[2].Description",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"styledText": true,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onClick"
+					],
+					"textAlign": "right",
+					"method": "ObjectMethods/information2.4dm"
+				},
+				"MoveRadio": {
+					"type": "radio",
+					"text": "Move a mail in another label",
+					"top": 255,
+					"left": 345,
+					"width": 303,
+					"height": 22,
+					"events": [
+						"onClick"
+					],
+					"dataSource": "Not:C34(Form:C1466.share)",
+					"method": "ObjectMethods/MoveRadio.4dm",
+					"fontSize": 16
+				},
+				"CopyRadio": {
+					"type": "radio",
+					"text": "Share a mail between multiple labels",
+					"top": 225,
+					"left": 345,
+					"width": 336,
+					"height": 27,
+					"events": [
+						"onClick"
+					],
+					"dataSource": "Form:C1466.share",
+					"method": "ObjectMethods/CopyRadio.4dm",
+					"fontSize": 16
+				},
+				"information1": {
+					"type": "input",
+					"top": 125,
+					"left": 330,
+					"width": 688,
+					"height": 80,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"dataSource": "Infos[1].Description",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"styledText": true,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				}
+			}
+		}
+	],
+	"geometryStamp": 603,
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {}
+		}
+	}
+}
