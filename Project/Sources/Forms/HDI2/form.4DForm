@@ -90,16 +90,16 @@
 						{
 							"header": {
 								"name": "Header4",
-								"text": "Date"
+								"text": "Labels"
 							},
 							"name": "Column4",
-							"dataSource": "Date:C102(This:C1470.sendAt)",
+							"dataSource": "GetLabelNames(This:C1470.labelIds)",
 							"footer": {
 								"name": "Footer4"
 							},
 							"width": 78,
 							"enterable": false,
-							"dataSourceTypeHint": "date"
+							"dataSourceTypeHint": "text"
 						},
 						{
 							"header": {
@@ -160,7 +160,7 @@
 						"onSelectionChange"
 					],
 					"method": "ObjectMethods/Hierarchical List.4dm",
-					"dataSource": "Form:C1466.labels.listRef",
+					"dataSource": "Form:C1466.listManager.listRef",
 					"dropping": "automatic"
 				},
 				"Spinner": {

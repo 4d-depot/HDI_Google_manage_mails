@@ -7,7 +7,7 @@ var $itemName : Text
 // Position of the mailbox in the list box
 $itemPos:=Drop position:C608
 
-GET LIST ITEM:C378(Form:C1466.labels.listRef; $itemPos; $itemID; $itemName)
+GET LIST ITEM:C378(Form:C1466.listManager.listRef; $itemPos; $itemID; $itemName)
 
 // search the box information of the destination box
-return Form:C1466.labels.search($itemID)
+return Form:C1466.listManager.search($itemID)

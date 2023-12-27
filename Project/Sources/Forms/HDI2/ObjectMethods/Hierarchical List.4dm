@@ -19,7 +19,7 @@ Case of
 			var $id : Text
 			
 			// search the box information of the destination box
-			$destinationLabel:=FindDestinationMailBox
+			$destinationLabel:=FindDestinationLabel
 			
 			// ids of the email to copy
 			$id:=Form:C1466.mail.id

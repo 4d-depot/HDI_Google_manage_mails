@@ -5,19 +5,13 @@ var $param : Object
 
 ARRAY LONGINT:C221($arr; 0)
 
-If (Is a list:C621(Form:C1466.labels.listRef))
-	$listID:=Selected list items:C379(Form:C1466.labels.listRef; $arr; *)
+If (Is a list:C621(Form:C1466.listManager.listRef))
+	$listID:=Selected list items:C379(Form:C1466.listManager.listRef; $arr; *)
 	
-	// Search the label information of the selected label
-	Form:C1466.currentlabel:=Form:C1466.labels.search($listID)
-	
-	If (Form:C1466.currentlabel#Null:C1517)
+	If (Form:C1466.listManager.search($listID)#Null:C1517)
 		
-		If (Form:C1466.currentlabel.id="TRASH")
-			OBJECT SET VISIBLE:C603(*; "Column3"; False:C215)
-		Else 
-			OBJECT SET VISIBLE:C603(*; "Column3"; True:C214)
-		End if 
+		// Search the label information of the selected label
+		Form:C1466.currentlabel:=Form:C1466.listManager.search($listID)
 		
 		// Reset the mail list
 		Form:C1466.mails:=New collection:C1472
