@@ -93,13 +93,13 @@
 								"text": "Labels"
 							},
 							"name": "Column4",
-							"dataSource": "GetLabelNames(This:C1470.labelIds)",
+							"dataSource": "GetLabelPictures(This:C1470.labelIds)",
 							"footer": {
 								"name": "Footer4"
 							},
 							"width": 78,
 							"enterable": false,
-							"dataSourceTypeHint": "text"
+							"dataSourceTypeHint": "picture"
 						},
 						{
 							"header": {
